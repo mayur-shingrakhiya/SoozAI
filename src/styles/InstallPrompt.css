@@ -1,0 +1,270 @@
+/* Install Prompt Overlay */
+.install-prompt-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  animation: slideUp 0.4s ease;
+  pointer-events: none;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Install Prompt Card */
+.install-prompt {
+  background: var(--sidebar-bg);
+  border-top: 1px solid var(--border-color);
+  border-radius: 16px 16px 0 0;
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 500px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  pointer-events: auto;
+}
+
+.light-theme .install-prompt {
+  background: #ffffff;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Close Button */
+.install-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.install-close-btn:hover {
+  background: var(--sidebar-hover);
+  color: var(--text-primary);
+}
+
+/* Logo Icon */
+.install-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.install-icon .logo-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #4DA9B3 0%, #4DA9B3 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+/* Title */
+.install-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 8px 0;
+}
+
+.light-theme .install-title {
+  color: #1a1a2e;
+}
+
+/* Description */
+.install-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.light-theme .install-description {
+  color: #666;
+}
+
+/* Features List */
+.install-features {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 24px;
+  gap: 12px;
+}
+
+.install-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding: 12px;
+  background: rgba(124, 58, 237, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.light-theme .install-feature {
+  background: rgba(99, 102, 241, 0.05);
+  border-color: rgba(99, 102, 241, 0.1);
+}
+
+.feature-icon {
+  font-size: 24px;
+}
+
+.install-feature span:last-child {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+  font-weight: 500;
+}
+
+.light-theme .install-feature span:last-child {
+  color: #666;
+}
+
+/* Install Button */
+.install-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #4DA9B3 0%, #4DA9B3 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  margin-bottom: 12px;
+}
+
+.install-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+}
+
+.install-button:active {
+  transform: translateY(0);
+}
+
+/* Skip Button */
+.install-skip-btn {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.install-skip-btn:hover {
+  background: var(--sidebar-hover);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
+
+.light-theme .install-skip-btn {
+  border-color: #e5e7eb;
+  color: #666;
+}
+
+.light-theme .install-skip-btn:hover {
+  background: #f3f4f6;
+  color: #1a1a2e;
+  border-color: #6366f1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .install-prompt {
+    border-radius: 16px 16px 0 0;
+    padding: 20px 16px;
+  }
+
+  .install-icon .logo-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+  }
+
+  .install-title {
+    font-size: 20px;
+  }
+
+  .install-description {
+    font-size: 13px;
+  }
+
+  .install-features {
+    gap: 8px;
+  }
+
+  .install-feature {
+    padding: 10px 8px;
+  }
+
+  .feature-icon {
+    font-size: 20px;
+  }
+
+  .install-feature span:last-child {
+    font-size: 11px;
+  }
+
+  .install-button {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* Desktop - Show as popup instead of bottom bar */
+@media (min-width: 769px) {
+  .install-prompt-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    bottom: auto;
+    top: 0;
+    height: 100vh;
+  }
+
+  .install-prompt {
+    border-radius: 16px;
+    max-width: 450px;
+    margin: 0;
+  }
+}

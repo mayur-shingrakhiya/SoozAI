@@ -1,0 +1,184 @@
+/* =========================
+   INPUTS & FORM
+========================= */
+
+.input {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--accent-primary);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+  margin: 0 10px;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.login-modal {
+  background: var(--sidebar-bg);
+  border-radius: 16px;
+  padding: 36px;
+  width: 90%;
+  max-width: 440px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: var(--text-primary);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.new-chat-btn {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--accent-primary);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.new-chat-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Google Button */
+.google-btn {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body:not(.light-theme) .google-btn {
+  background: var(--sidebar-hover);
+}
+
+body:not(.light-theme) .google-btn:hover {
+  background: var(--accent-primary);
+  color: #fff;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light-theme .login-modal {
+  background: #ffffff;
+}
+
+body.light-theme .google-btn {
+  background: #f3f4f6;
+}
+
+body.light-theme .google-btn:hover {
+  background: #e5e7eb;
+}
+
+body.light-theme .close-btn {
+  color: #374151;
+}
+
+
+.w-50 {
+  width: 50%;
+}

@@ -1,0 +1,141 @@
+/* Mobile Header - Fixed at Top */
+.mobile-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--sidebar-bg);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 999;
+  display: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  max-width: 100%;
+}
+
+/* Left: Menu Button */
+.mobile-menu-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+}
+
+.mobile-menu-btn:hover {
+  background: var(--sidebar-hover);
+}
+
+/* Center: Logo */
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+  margin: 0 8px;
+}
+
+.mobile-logo .logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #4DA9B3 0%, #4DA9B3 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.mobile-logo .logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* Right: Action Buttons */
+.mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mobile-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+}
+
+.mobile-action-btn:hover {
+  background: var(--sidebar-hover);
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: block;
+  }
+  
+  /* Add padding to body for fixed header */
+  body {
+    padding-top: 60px;
+  }
+}
+
+/* Light Theme Support */
+.light-theme .mobile-header {
+  background: #ffffff;
+  border-bottom-color: #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.light-theme .mobile-menu-btn,
+.light-theme .mobile-action-btn {
+  color: #1a1a2e;
+}
+
+.light-theme .mobile-menu-btn:hover,
+.light-theme .mobile-action-btn:hover {
+  background: #f3f4f6;
+}
+
+.light-theme .mobile-logo .logo-text {
+  color: #1a1a2e;
+}
+
+/* Utility Classes */
+.d-md-none {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .d-md-none {
+    display: block;
+  }
+}
